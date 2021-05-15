@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="OEZ-7W-k22">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="dfQ-vB-5Ab">
                             <connections>
-                                <segue destination="Y6W-OH-hqX" kind="show" id="6QI-le-MQF"/>
+                                <segue destination="Y6W-OH-hqX" kind="show" identifier="adicionar" id="6QI-le-MQF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
