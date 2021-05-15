@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpK-5g-7wK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u9D-N2-Dd7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -31,6 +31,13 @@
                             <outlet property="delegate" destination="gpK-5g-7wK" id="nl2-oV-p0Y"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="OEZ-7W-k22">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="dfQ-vB-5Ab">
+                            <connections>
+                                <segue destination="Y6W-OH-hqX" kind="show" id="6QI-le-MQF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYn-Nn-Bo9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bH7-Rp-Sv1"/>
                     <connections>
                         <outlet property="felicidadeTextField" destination="N99-df-f6K" id="zCL-k4-nfA"/>
                         <outlet property="nomeTextField" destination="bcV-uc-PZD" id="NNZ-ew-2hO"/>
@@ -89,7 +97,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.043478260869566" y="23.4375"/>
+            <point key="canvasLocation" x="9" y="13"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n0E-KE-xlJ">
+            <objects>
+                <navigationController id="u9D-N2-Dd7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HRd-Ol-9Zu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gpK-5g-7wK" kind="relationship" relationship="rootViewController" id="38H-Az-cAr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDs-y7-xzt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1659" y="13"/>
         </scene>
     </scenes>
     <resources>
