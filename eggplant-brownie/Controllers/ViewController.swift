@@ -43,6 +43,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             celula.accessoryType = .none
         }
         
+        let item = itens[indexPath.row]
+        if let position = itensSelecionados.index(of: item) {
+            itensSelecionados.remove(at: position)
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
