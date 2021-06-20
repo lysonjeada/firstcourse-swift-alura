@@ -7,7 +7,12 @@
 
 import UIKit
 
-class RefeicoesTableViewController: UITableViewController {
+// em java seria uma interface
+protocol AdicionaRefeicaoDelegate {
+    func add (_ refeicao: Refeicao)
+}
+
+class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     
     var refeicoes = [Refeicao(nome: "Macarrao", felicidade: 4),
                     Refeicao(nome: "Pizza", felicidade: 4),
@@ -35,11 +40,9 @@ class RefeicoesTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "adicionar" {
-        if let viewController = segue.destination as? ViewController {
-            viewController.tableViewController = self
-            
+            if let viewController = segue.destination as? ViewController {
+                viewController.delegate = self
             }
         }
     }
