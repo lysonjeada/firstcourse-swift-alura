@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionaItensDelegate {
     
     // MARK: - Atributos
     
@@ -18,12 +18,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                          Item(nome:"Molho apimentado", calorias: 40.0),
                          Item(nome:"Manjericao", calorias: 40.0)]
     var itensSelecionados: [Item] = []
-//    var itens: [String] = ["Molho de tomate", "Queijo", "Molho apimentado", "Manjericao"]
     
     // MARK: - IBOutlets
     
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet weak var felicidadeTextField: UITextField?
+    @IBOutlet weak var itensTableView: UITableView!
+    
+    // MARK: - View life cicle
+    
+    override func viewDidLoad() {
+        let botaoAdicionaItem = UIBarButtonItem(title: "adicionar", style: .plain, target: self, action: #selector(self.adicionarItens))
+        navigationItem.rightBarButtonItem = botaoAdicionaItem
+    }
+    
+    @objc func adicionarItens() {
+        let adicionarItensViewController = AdicionarItensViewController(delegate: self)
+        navigationController?.pushViewController(adicionarItensViewController, animated: true)
+    }
+    
+    func add(_ item: Item) {
+        itens.append(item)
+        itensTableView.reloadData()
+    }
     
     // MARK: -UITableViewDataSource
     
@@ -41,14 +58,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             itensSelecionados.append(itens[linhaDaTabela])
         } else {
             celula.accessoryType = .none
-        }
-        
-        let item = itens[indexPath.row]
-        if let position = itensSelecionados.index(of: item) {
-            itensSelecionados.remove(at: position)
             
+            let item = itens[indexPath.row]
+            if let position = itensSelecionados.firstIndex(of: item) {
+                itensSelecionados.remove(at: position)
+            }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,8 +90,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
-        
-        refeicao.itens = itensSelecionados
         
         print("comi \(refeicao.nome) churros e fiquei com felicidade: \(refeicao.felicidade)")
         
