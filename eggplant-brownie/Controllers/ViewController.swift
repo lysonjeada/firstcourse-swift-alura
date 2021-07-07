@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var delegate: AdicionaRefeicaoDelegate?
     var itens: [Item] = [Item(nome:"Molho de tomate", calorias: 40.0),
-                         Item(nome:"Molho de tomate", calorias: 40.0),
                          Item(nome:"Queijo de castanha", calorias: 40.0),
                          Item(nome:"Molho apimentado", calorias: 40.0),
                          Item(nome:"Manjericao", calorias: 40.0)]
@@ -29,7 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         let botaoAdicionaItem = UIBarButtonItem(title: "adicionar", style: .plain, target: self, action: #selector(self.adicionarItens))
-        navigationItem.rightBarButtonItem = botaoAdicionaItem
+        let botaoVoltarItem = UIBarButtonItem(title: "voltar", style: .plain, target: self, action: #selector(self.adicionarItens))
+        navigationItem.rightBarButtonItems = [botaoAdicionaItem, botaoVoltarItem]
+  
     }
     
     @objc func adicionarItens() {
