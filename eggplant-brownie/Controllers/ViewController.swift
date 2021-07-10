@@ -40,7 +40,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func add(_ item: Item) {
         itens.append(item)
-        itensTableView.reloadData()
+        if let tableView = itensTableView {
+            tableView.reloadData()
+        } else {
+            let alerta = Alerta(controller: self)
+            alerta.exibe()
+        }
     }
     
     // MARK: -UITableViewDataSource

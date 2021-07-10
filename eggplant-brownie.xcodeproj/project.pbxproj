@@ -18,6 +18,8 @@
 		70740B2F2643593F00E05D07 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70740B2E2643593F00E05D07 /* Refeicao.swift */; };
 		70740B312643599000E05D07 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70740B302643599000E05D07 /* Item.swift */; };
 		70740B762648C83B00E05D07 /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70740B752648C83B00E05D07 /* RefeicoesTableViewController.swift */; };
+		707BA4E126964463001C64A8 /* Swift-Parte3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BA4E026964463001C64A8 /* Swift-Parte3.swift */; };
+		707BA4E326965086001C64A8 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707BA4E226965086001C64A8 /* Alerta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		70740B2E2643593F00E05D07 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		70740B302643599000E05D07 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		70740B752648C83B00E05D07 /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
+		707BA4E026964463001C64A8 /* Swift-Parte3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift-Parte3.swift"; sourceTree = "<group>"; };
+		707BA4E226965086001C64A8 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		706E966B263E3DA500C79604 /* eggplant-brownie */ = {
 			isa = PBXGroup;
 			children = (
+				707BA4DF2696443A001C64A8 /* Anotations */,
 				706E966C263E3DA500C79604 /* AppDelegate.swift */,
 				70740B3226435A7C00E05D07 /* Models */,
 				70740B3426435AD600E05D07 /* Views */,
@@ -85,6 +90,7 @@
 			children = (
 				70740B302643599000E05D07 /* Item.swift */,
 				70740B2E2643593F00E05D07 /* Refeicao.swift */,
+				707BA4E226965086001C64A8 /* Alerta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,6 +112,14 @@
 				704B2F3426938C1D008683BF /* AdicionarItensViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		707BA4DF2696443A001C64A8 /* Anotations */ = {
+			isa = PBXGroup;
+			children = (
+				707BA4E026964463001C64A8 /* Swift-Parte3.swift */,
+			);
+			path = Anotations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +199,8 @@
 				70740B762648C83B00E05D07 /* RefeicoesTableViewController.swift in Sources */,
 				706E966F263E3DA500C79604 /* SceneDelegate.swift in Sources */,
 				704B2F3526938C1D008683BF /* AdicionarItensViewController.swift in Sources */,
+				707BA4E126964463001C64A8 /* Swift-Parte3.swift in Sources */,
+				707BA4E326965086001C64A8 /* Alerta.swift in Sources */,
 				70740B2F2643593F00E05D07 /* Refeicao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
