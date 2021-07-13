@@ -50,16 +50,16 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
             guard let indexPath = tableView.indexPath(for: celula) else { return }
             let refeicao = refeicoes[indexPath.row]
             
-            let alerta = UIAlertController(title: refeicao.detalhesReduce(), message: "felicidade: \(refeicao.felicidade)", preferredStyle: .alert)
-            // no completion posso configurar algo depois que o alerta for exibido
-            let botaoCancelar = UIAlertAction(title: "cancelar", style: .cancel, handler: nil)
-            alerta.addAction(botaoCancelar)
+            RemoveRefeicaoViewController(controller: self).exibe(refeicao, handler: {
+                alert in
+                self.refeicoes.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            })
             
-            present(alerta, animated: true, completion: nil)
+            
         }
     }
-    
-    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "adicionar" {

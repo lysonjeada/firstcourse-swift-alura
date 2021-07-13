@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		703F134C269CD284004FBCFF /* RemoveRefeicaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F134B269CD284004FBCFF /* RemoveRefeicaoViewController.swift */; };
 		704B2F3526938C1D008683BF /* AdicionarItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B2F3326938C1D008683BF /* AdicionarItensViewController.swift */; };
 		704B2F3626938C1E008683BF /* AdicionarItensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704B2F3426938C1D008683BF /* AdicionarItensViewController.xib */; };
 		706E966D263E3DA500C79604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E966C263E3DA500C79604 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		703F134B269CD284004FBCFF /* RemoveRefeicaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRefeicaoViewController.swift; sourceTree = "<group>"; };
 		704B2F3326938C1D008683BF /* AdicionarItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarItensViewController.swift; sourceTree = "<group>"; };
 		704B2F3426938C1D008683BF /* AdicionarItensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarItensViewController.xib; sourceTree = "<group>"; };
 		706E9669263E3DA500C79604 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				706E9670263E3DA500C79604 /* ViewController.swift */,
 				70740B752648C83B00E05D07 /* RefeicoesTableViewController.swift */,
 				704B2F3326938C1D008683BF /* AdicionarItensViewController.swift */,
+				703F134B269CD284004FBCFF /* RemoveRefeicaoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				706E9671263E3DA500C79604 /* ViewController.swift in Sources */,
 				706E966D263E3DA500C79604 /* AppDelegate.swift in Sources */,
 				70740B762648C83B00E05D07 /* RefeicoesTableViewController.swift in Sources */,
+				703F134C269CD284004FBCFF /* RemoveRefeicaoViewController.swift in Sources */,
 				706E966F263E3DA500C79604 /* SceneDelegate.swift in Sources */,
 				704B2F3526938C1D008683BF /* AdicionarItensViewController.swift in Sources */,
 				707BA4E126964463001C64A8 /* Swift-Parte3.swift in Sources */,

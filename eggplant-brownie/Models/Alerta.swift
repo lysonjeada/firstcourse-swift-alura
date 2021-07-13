@@ -8,8 +8,8 @@ class Alerta {
         self.controller = controller
     }
     
-    public func exibe() {
-        let alerta = UIAlertController.init(title: "Desculpe", message: "Nao foi possivel atualizar a tabela", preferredStyle: .alert)
+    public func exibe(titulo: String = "Atencao", mensagem: String) {
+        let alerta = UIAlertController.init(title: titulo, message: mensagem, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alerta.addAction(ok)
         controller.present(alerta, animated: true, completion: nil)
