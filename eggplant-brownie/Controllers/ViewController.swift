@@ -12,11 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate?
-    var itens: [Item] = [Item(nome:"Molho de tomate", calorias: 40.0),
-                         Item(nome:"Queijo de castanha", calorias: 40.0),
-                         Item(nome:"Molho apimentado", calorias: 40.0),
-                         Item(nome:"Manjericao", calorias: 40.0)]
-    var itensSelecionados: [Item] = []
+    var itens = [Item]()
+    var itensSelecionados = [Item]()
     
     // MARK: - IBOutlets
     
@@ -30,7 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let botaoAdicionaItem = UIBarButtonItem(title: "adicionar", style: .plain, target: self, action: #selector(self.adicionarItens))
         let botaoVoltarItem = UIBarButtonItem(title: "voltar", style: .plain, target: self, action: #selector(self.adicionarItens))
         navigationItem.rightBarButtonItems = [botaoAdicionaItem, botaoVoltarItem]
-  
+        recuperaItens()
+    }
+    
+    func recuperaItens() {
+        itens = ItemDao().recupera()
     }
     
     @objc func adicionarItens() {
@@ -40,12 +41,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func add(_ item: Item) {
         itens.append(item)
+        ItemDao().save(itens)
         if let tableView = itensTableView {
             tableView.reloadData()
         } else {
-            let alerta = Alerta(controller: self).exibe(mensagem: "Nao foi possivel atualizar a tabela")
+            Alerta(controller: self).exibe(mensagem: "Nao foi possivel atualizar a tabela")
         }
     }
+    
+    
     
     // MARK: -UITableViewDataSource
     

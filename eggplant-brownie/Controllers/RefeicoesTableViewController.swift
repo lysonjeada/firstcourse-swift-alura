@@ -14,10 +14,12 @@ protocol AdicionaRefeicaoDelegate {
 
 class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     
-    var refeicoes = [Refeicao(nome: "Macarrao", felicidade: 4),
-                    Refeicao(nome: "Pizza", felicidade: 4),
-                    Refeicao(nome: "Comida Japonesa", felicidade: 5)]
+    var refeicoes: [Refeicao] = []
     
+    override func viewDidLoad() {
+        refeicoes = RefeicaoDao().recupera()
+        
+    }
 
 
     override func tableView (_ tableView: UITableView, numberOfRowsInSection
@@ -40,6 +42,7 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
     func add (_ refeicao: Refeicao) {
         refeicoes.append(refeicao)
         tableView.reloadData()
+        RefeicaoDao().save(refeicoes)
     }
     
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer) {
@@ -55,11 +58,8 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
                 self.refeicoes.remove(at: indexPath.row)
                 self.tableView.reloadData()
             })
-            
-            
         }
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "adicionar" {
